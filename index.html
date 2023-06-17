@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+	<title>Rock Paper Scissors</title>
+
+</head>
+<body>
+<h1 class="head"> This is the game of rock paper scissors </h1><br>
+<h2>Choose your pick and play against the computer</h2>
+
+<input type="button" class="pick1" value="Rock🪨" onclick = "fun1()">     </input>
+<input type="button" class="pick2" value="Paper📄" onclick = "fun2()">    </input>
+<input type="button" class="pick3" value="Scissors✂️" onclick = "fun3()"> </input>
+
+<br><br>
+<h3 id = "result"></h3>
+<br>
+<h1 id="outcome"></h1>
+
+
+<!-- CSS -->
+
+
+<style type="text/css">
+
+    .head {
+    	margin-top: 20px;
+    	text-transform:uppercase;
+    	color:#A30340;
+    	letter-spacing:2px;
+    	font-family:'Raleway';
+    	font-size:3rem;
+    }
+
+	.pick1 {
+		background-color:red;
+		margin:10px;
+		padding:5px 20px;
+		width:auto;
+		color:white;
+		font-size:110%;
+
+	}
+	.pick2 {
+		background-color:Blue;
+		margin:10px;
+		padding:5px 20px;
+		width:auto;
+		color:white;
+		font-size:110%;
+	}
+	.pick3 {
+		background-color:Green;
+	    margin:10px;
+		padding:5px 10px;
+		width:auto;
+		color:white;
+		font-size:110%;
+	}
+    .pick1:hover {
+    	background-color:darkred;
+    	color:antiquewhite;
+    	transform:scale(1.1);
+    }
+    .pick2:hover {
+    	background-color:darkblue;
+    	color:antiquewhite;
+    	transform:scale(1.1);
+    }
+    .pick3:hover {
+    	background-color:darkgreen;
+    	color:antiquewhite;
+    	transform:scale(1.1);
+    }
+    #outcome {
+    	font-family: "Comic Sans MS", "Comic Sans", cursive;
+    	font-size:5rem;
+    	color:rebeccapurple;
+    }
+    body {
+    	background: linear-gradient(to right, #11F9A6, blue);
+    	background-size:cover;
+
+
+    }
+	* {
+		text-align:center;
+	}
+</style>
+
+
+<!-- Javascript -->
+
+
+<script>
+         function fun1()
+    {
+     var opts=["Rock","Paper","Scissors"];
+     var pick= Math.floor(Math.random() * opts.length);
+       var cpu=opts[pick];
+       let p1 ="Rock";
+
+       document.getElementById("result").innerHTML = "You picked '"+p1+"' and computer picked '"+cpu+"'";
+
+
+       if(p1==cpu)
+       {
+           document.getElementById("outcome").innerHTML = "It's a Tie!";    
+       }
+       if(cpu=="Paper")
+       {
+           document.getElementById("outcome").innerHTML = "You lose 🙁";   
+       }
+       else if(cpu=="Scissors")
+       {
+           document.getElementById("outcome").innerHTML = "You Win 🥳";   
+       }
+       
+    }
+        function fun2()
+    {
+     var opts=["Rock","Paper","Scissors"];
+     var pick= Math.floor(Math.random() * opts.length);
+       var cpu=opts[pick];
+       let p1 ="Paper";
+
+       document.getElementById("result").innerHTML = "You picked '"+p1+"' and computer picked '"+cpu+"'";
+
+       if(p1==cpu)
+       {
+           document.getElementById("outcome").innerHTML = ("It's a Tie!");
+       }
+       if(cpu=="Scissors")
+       {
+           document.getElementById("outcome").innerHTML = ("You lose 🙁");
+       }
+       else if(cpu=="Rock")
+       {
+           document.getElementById("outcome").innerHTML = ("You Win 🥳");    
+       }
+    }
+        function fun3()
+    {
+     var opts=["Rock","Paper","Scissors"];
+     var pick= Math.floor(Math.random() * opts.length);
+       var cpu=opts[pick];
+       let p1 ="Scissors";
+
+       document.getElementById("result").innerHTML = "You picked '"+p1+"' and computer picked '"+cpu+"'";
+
+       if(p1==cpu)
+       {
+           document.getElementById("outcome").innerHTML = ("It's a Tie!");    
+       }
+       if(cpu=="Rock")
+       {
+           document.getElementById("outcome").innerHTML = ("You lose 🙁");
+       }
+       else if(cpu=="Paper")
+       {
+           document.getElementById("outcome").innerHTML = ("You Win 🥳");
+       }
+    }
+</script>
+</body>
+</html>
